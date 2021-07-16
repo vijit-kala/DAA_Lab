@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-    freopen("linear_search_in.txt", "r", stdin);
-    freopen("linear_search_out.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 
     ios::sync_with_stdio(false);
     cin.tie(0), cout.tie(0);
