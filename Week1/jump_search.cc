@@ -37,7 +37,7 @@ int main() {
                 i *= 2;
             }
 
-            // Binary searching between prev and i to find the key.
+            // Binary searching between i/2 and i to find the key.
             int l = i / 2, r = i;
             while (l <= r) {
                 int mid = l + (r - l) / 2;
