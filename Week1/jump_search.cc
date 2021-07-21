@@ -34,6 +34,7 @@ int main() {
             int i = 1;
             // To find interval where key lies.
             while (i < n and arr[i] <= key) {
+                cntComp++;
                 i *= 2;
             }
 
