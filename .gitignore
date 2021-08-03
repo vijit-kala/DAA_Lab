@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+#also adding the vscode files
+.vscode
