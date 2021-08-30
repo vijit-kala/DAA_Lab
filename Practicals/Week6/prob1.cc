@@ -2,7 +2,7 @@
 using namespace std;
 
 // DFS to find if path exists.
-// Time Complexity: O(V+E).
+// Time Complexity: O(V^2).
 // Space Complexity: O(V).
 bool path_exists(vector<vector<int>> &adj, int src, int dest) {
     // Base case.
