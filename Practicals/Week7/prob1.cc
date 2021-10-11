@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 
+#define INT_MAX 1000000
+
 using namespace std;
 
 void print_dist(vector<int> &dist) {

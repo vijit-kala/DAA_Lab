@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+#define INT_MAX 100000
+
 void bellman_ford(vector<vector<int>> &adj, int src, vector<int> &dist, vector<int> &pre) {
     int V = adj.size();
     dist.assign(V, INT_MAX);
