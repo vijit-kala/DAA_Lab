@@ -4,7 +4,8 @@ using namespace std;
 // DFS to find if path exists.
 // Time Complexity: O(V^2).
 // Space Complexity: O(V).
-bool path_exists(vector<vector<int>> &adj, int src, int dest) {
+bool path_exists(vector<vector<int>> &adj, int src, int dest)
+{
     // Base case.
     if (src == dest)
         return true;
@@ -14,17 +15,21 @@ bool path_exists(vector<vector<int>> &adj, int src, int dest) {
     stack<int> s;
     s.push(src);
 
-    while (!s.empty()) {
+    while (!s.empty())
+    {
         int v = s.top();
         s.pop();
 
-        for (int i = 0; i < adj[v].size(); i++) {
+        for (int i = 0; i < adj[v].size(); i++)
+        {
             if (adj[v][i] == 0)
                 continue;
-            else {
+            else
+            {
                 if (i == dest)
                     return true;
-                if (!visited[i]) {
+                if (!visited[i])
+                {
                     s.push(i);
                     visited[i] = true;
                 }
@@ -36,13 +41,16 @@ bool path_exists(vector<vector<int>> &adj, int src, int dest) {
     return false;
 }
 
-int main() {
+int main()
+{
     int n;
     cin >> n;
     vector<vector<int>> adj;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         vector<int> row;
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < n; j++)
+        {
             int x;
             cin >> x;
             row.push_back(x);

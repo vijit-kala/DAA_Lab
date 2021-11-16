@@ -6,7 +6,8 @@ using namespace std;
 
 using ll = long long;
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
 
@@ -24,20 +25,21 @@ int main() {
     int ans_ptr = 0;
     int final_size = (n1 > n2) ? n1 : n2;
     int ans_arr[final_size];
-    while (ptr1 < n1 and ptr2 < n2) {
-        if (arr1[ptr1] == arr2[ptr2]) {
+    while (ptr1 < n1 and ptr2 < n2)
+    {
+        if (arr1[ptr1] == arr2[ptr2])
+        {
             ans_arr[ans_ptr++] = arr1[ptr1++];
             ptr2++;
-        } else if (arr1[ptr1] < arr2[ptr2]) {
-            ptr1++;
-        } else {
-            ptr2++;
         }
+        else if (arr1[ptr1] < arr2[ptr2])
+            ptr1++;
+        else
+            ptr2++;
     }
 
-    for (int i = 0; i < ans_ptr; i++) {
+    for (int i = 0; i < ans_ptr; i++)
         cout << ans_arr[i] << " ";
-    }
     cout << endl;
     return 0;
 }

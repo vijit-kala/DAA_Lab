@@ -5,7 +5,8 @@ using namespace std;
 // using BFS.
 // Time Complexity: O(V^2) as we used adjacency matrix.
 // Space Complexity: O(V).
-bool isBipartite(vector<vector<int>> &adj, int src) {
+bool isBipartite(vector<vector<int>> &adj, int src)
+{
     int n = adj.size();
 
     vector<int> color_arr(n, -1);
@@ -16,7 +17,8 @@ bool isBipartite(vector<vector<int>> &adj, int src) {
     queue<int> q;
     q.push(src);
 
-    while (!q.empty()) {
+    while (!q.empty())
+    {
         int val = q.front();
         q.pop();
 
@@ -24,8 +26,10 @@ bool isBipartite(vector<vector<int>> &adj, int src) {
         if (adj[val][val] == 1)
             return false;
 
-        for (int it = 0; it < n; it++) {
-            if (adj[val][it] and color_arr[it] == -1) {
+        for (int it = 0; it < n; it++)
+        {
+            if (adj[val][it] and color_arr[it] == -1)
+            {
                 color_arr[it] = 1 - color_arr[val];
                 q.push(it);
             }
@@ -41,13 +45,15 @@ bool isBipartite(vector<vector<int>> &adj, int src) {
     return true;
 }
 
-int main() {
+int main()
+{
     int n;
     cin >> n;
 
     vector<vector<int>> adj; // Adjacency matrix.
     // Taking input in graph.
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         vector<int> row(n);
         for (auto &e : row)
             cin >> e;

@@ -3,20 +3,18 @@
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 using ll = long long;
-
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
-
     freopen("sorted_inputs.txt", "r", stdin);
     freopen("output_2.txt", "w", stdout);
 
     int testCases;
     cin >> testCases;
-
-    while (testCases--) {
+    while (testCases--)
+    {
         // Solving every tescase here.
         int n;
         cin >> n;
@@ -28,27 +26,37 @@ int main() {
 
         // Main logic.
         int cntComp = 0, flag = 0;
-        if (arr[0] == key) {
+        if (arr[0] == key)
+        {
             cout << "Present " << 1 << endl;
-        } else {
+        }
+        else
+        {
             int i = 1;
             // To find interval where key lies.
-            while (i < n and arr[i] <= key) {
+            while (i < n and arr[i] <= key)
+            {
                 cntComp++;
                 i *= 2;
             }
 
             // Binary searching between i/2 and i to find the key.
             int l = i / 2, r = i;
-            while (l <= r) {
+            while (l <= r)
+            {
                 int mid = l + (r - l) / 2;
-                if (arr[mid] == key) {
+                if (arr[mid] == key)
+                {
                     cntComp++;
                     flag = 1;
                     break;
-                } else if (arr[mid] > key) {
+                }
+                else if (arr[mid] > key)
+                {
                     r = mid - 1;
-                } else {
+                }
+                else
+                {
                     l = mid + 1;
                 }
                 cntComp++;

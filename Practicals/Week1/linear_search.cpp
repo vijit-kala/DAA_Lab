@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+{
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
@@ -11,7 +12,8 @@ int main() {
     int testCase;
     cin >> testCase;
 
-    while (testCase--) {
+    while (testCase--)
+    {
         int n;
         cin >> n;
         vector<int> arr(n);
@@ -20,9 +22,11 @@ int main() {
         int key;
         cin >> key;
         int cntCmp = 0, flag = 0;
-        for (int x : arr) {
+        for (int x : arr)
+        {
             cntCmp++;
-            if (x == key) {
+            if (x == key)
+            {
                 flag = 1;
                 break;
             }

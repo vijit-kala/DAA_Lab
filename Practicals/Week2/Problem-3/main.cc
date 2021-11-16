@@ -6,8 +6,10 @@ using namespace std;
 
 using ll = long long;
 
-int binarySearch(vector<int>& arr, int low, int high, int key) {
-    if (low <= high) {
+int binarySearch(vector<int> &arr, int low, int high, int key)
+{
+    if (low <= high)
+    {
         int mid = low + (high - low) / 2;
         if (arr[mid] == key)
             return mid;
@@ -19,12 +21,14 @@ int binarySearch(vector<int>& arr, int low, int high, int key) {
     return -1;
 }
 
-void countPairWithDiffK(vector<int>& arr, int n, int k) {
+void countPairWithDiffK(vector<int> &arr, int n, int k)
+{
     // Using inbuilt sort method.
     sort(arr.begin(), arr.end());
     int count = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         if (binarySearch(arr, i + 1, n - 1, (arr[i] + k)) != -1)
             count++;
     }
@@ -32,7 +36,8 @@ void countPairWithDiffK(vector<int>& arr, int n, int k) {
     cout << count;
 }
 
-int main() {
+int main()
+{
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
@@ -42,12 +47,13 @@ int main() {
     int testCases;
     cin >> testCases;
 
-    while (testCases--) {
+    while (testCases--)
+    {
         // Solving every tescase here.
         int n;
         cin >> n;
         vector<int> arr(n);
-        for (auto& e : arr)
+        for (auto &e : arr)
             cin >> e;
         int k;
         cin >> k;
@@ -62,7 +68,7 @@ int main() {
         // }
         // cout << count << endl;
 
-        // Approach 2: Sorting + Binary Search -> Time: O(NlogN) Space: O(1).
+        // Sorting + Binary Search -> Time: O(NlogN) Space: O(1).
         countPairWithDiffK(arr, n, k);
         cout << "\n";
     }

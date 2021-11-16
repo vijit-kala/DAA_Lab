@@ -7,7 +7,8 @@ using namespace std;
 
 using ll = long long;
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
 
@@ -17,12 +18,14 @@ int main() {
     int testCases;
     cin >> testCases;
 
-    while (testCases--) {
+    while (testCases--)
+    {
         // Solving every tescase here.
         int n;
         cin >> n;
         vector<int> arr(n);
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             cin >> arr[i];
         }
         int key;
@@ -33,15 +36,21 @@ int main() {
         sort(arr.begin(), arr.end());
         int low = 0, high = n - 1;
         int flag = 0, cntComp = 0;
-        while (low <= high) {
+        while (low <= high)
+        {
             int mid = low + (high - low) / 2;
-            if (arr[mid] == key) {
+            if (arr[mid] == key)
+            {
                 flag = 1;
                 cntComp++;
                 break;
-            } else if (arr[mid] > key) {
+            }
+            else if (arr[mid] > key)
+            {
                 high = mid - 1;
-            } else {
+            }
+            else
+            {
                 low = mid + 1;
             }
             cntComp++;

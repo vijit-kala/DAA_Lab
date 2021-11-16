@@ -6,7 +6,8 @@ using namespace std;
 
 using ll = long long;
 
-void merge(int arr[], int l, int mid, int r) {
+void merge(int arr[], int l, int mid, int r)
+{
     int i, j, k;
     int size1 = mid - l + 1;
     int size2 = r - mid;
@@ -21,7 +22,8 @@ void merge(int arr[], int l, int mid, int r) {
     i = j = 0;
     k = l;
 
-    while (i < size1 and j < size2) {
+    while (i < size1 and j < size2)
+    {
         if (left[i] <= right[j])
             arr[k++] = left[i++];
         else
@@ -34,7 +36,8 @@ void merge(int arr[], int l, int mid, int r) {
         arr[k++] = right[j++];
 }
 
-void mergeSort(int arr[], int l, int r) {
+void mergeSort(int arr[], int l, int r)
+{
     if (l >= r)
         return;
     int mid = l + (r - l) / 2;
@@ -43,14 +46,16 @@ void mergeSort(int arr[], int l, int r) {
     merge(arr, l, mid, r);
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
 
     int testCases;
     cin >> testCases;
 
-    while (testCases--) {
+    while (testCases--)
+    {
         // Solving every tescase here.
         int n;
         cin >> n;
@@ -63,13 +68,15 @@ int main() {
 
         bool flag = false;
         int left_ptr = 0, right_ptr = n - 1;
-        while (left_ptr <= right_ptr) {
+        while (left_ptr <= right_ptr)
+        {
             int sum_ptrs = arr[left_ptr] + arr[right_ptr];
             if (sum_ptrs > sum)
                 right_ptr--;
             else if (sum_ptrs < sum)
                 left_ptr++;
-            else {
+            else
+            {
                 flag = true;
                 cout << "{ " << arr[left_ptr] << " , " << arr[right_ptr] << " } ";
                 left_ptr++;

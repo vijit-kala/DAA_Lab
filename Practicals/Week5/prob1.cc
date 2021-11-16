@@ -7,34 +7,43 @@ using namespace std;
  * Complexities: Time - O(N), Space - O(N).
 */
 
-void solve() {
+void solve()
+{
     int n;
     cin >> n;
     char arr[n];
     int count[26] = {0};
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         cin >> arr[i];
         count[arr[i] - 'a']++;
     }
     char ch;
     int count_ch = 1;
-    for (int i = 0; i < 26; i++) {
-        if (count[i] > count_ch) {
+    for (int i = 0; i < 26; i++)
+    {
+        if (count[i] > count_ch)
+        {
             ch = (char)(i + 'a');
             count_ch = count[i];
         }
     }
-    if (count_ch == 1) {
+    if (count_ch == 1)
+    {
         cout << "No duplicates present\n";
-    } else {
+    }
+    else
+    {
         cout << ch << " " << count_ch;
     }
 }
 
-int main() {
+int main()
+{
     int testCase;
     cin >> testCase;
-    while (testCase--) {
+    while (testCase--)
+    {
         solve();
     }
     return 0;
